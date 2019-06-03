@@ -30,16 +30,16 @@ export default class RecipeDetails extends Component {
     async componentDidMount() {
         const id = this.props.id
         const url = `https://www.food2fork.com/api/get?key=e5b4c4ffb6234d90cd26734e175fdf06&rId=${id}`
-        // try {
-        //     const data = await fetch(url)
-        //     const jsonData = await data.json()
-        //     this.setState(
-        //         (state, props) => {return {recipe : jsonData.recipe}}, 
-        //         () => {}
-        //     )
-        // } catch (error) {
-        //     console.log(error)
-        // }
+        try {
+            const data = await fetch(url)
+            const jsonData = await data.json()
+            this.setState(
+                (state, props) => {return {recipe : jsonData.recipe}}, 
+                () => {}
+            )
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     render() {
